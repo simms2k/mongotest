@@ -7,7 +7,19 @@ import java.util.List;
 
 public final class CustomStore {
     @Id
-    private String id;
+    private String _id;
+    private String storeId;
     private BigDecimal b2sMargin;
-    private List<CustomItem> items;
+
+    public String getId() {
+        return _id;
+    }
+
+    public String getStoreId() {
+        return storeId;
+    }
+
+    public BigDecimal getB2sMargin() {
+        return b2sMargin;
+    }
 }

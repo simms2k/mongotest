@@ -1,14 +1,15 @@
 package com.foo.mongotest.model;
 
-import org.joda.money.BigMoney;
-import org.joda.money.Money;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
 
 public final class Supplier {
     @Id
-    private String id;
+    private String _id;
+    private String varId;
+    private String programId;
+    private String supplierId;
     private String conversionRate;
     private BigDecimal varMargin;
     private BigDecimal b2sMargin;
@@ -16,7 +17,19 @@ public final class Supplier {
     private String b2sOfflineFee;
 
     public String getId() {
-        return id;
+        return _id;
+    }
+
+    public String getVarId() {
+        return varId;
+    }
+
+    public String getProgramId() {
+        return programId;
+    }
+
+    public String getSupplierId() {
+        return supplierId;
     }
 
     public String getConversionRate() {
