@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/programs")
 public class ProgramController {
@@ -20,5 +22,10 @@ public class ProgramController {
                               @PathVariable("programId") final String programId) {
         return programRepository.findOneByVarIdAndProgramId(varId, programId)
                 .orElseThrow(() -> new ProgramNotFoundException(varId, programId));
+    }
+
+    @RequestMapping(value = "{varId}", method = RequestMethod.GET)
+    public List<Program> getPrograms(@PathVariable("varId") final String varId) {
+        return programRepository.findAllByVarId(varId);
     }
 }
